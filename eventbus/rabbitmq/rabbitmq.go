@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 
-	"github.com/mishudark/eventhus"
+	"github.com/fabriciopf/eventhus"
 
 	"github.com/streadway/amqp"
 )

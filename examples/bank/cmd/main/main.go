@@ -5,9 +5,9 @@ import (
 	"os"
 	"time"
 
+	"github.com/fabriciopf/eventhus/examples/bank"
+	"github.com/fabriciopf/eventhus/utils"
 	"github.com/golang/glog"
-	"github.com/mishudark/eventhus/examples/bank"
-	"github.com/mishudark/eventhus/utils"
 )
 
 func main() {
@@ -32,7 +32,7 @@ func main() {
 			//1) Create an account
 			var account bank.CreateAccount
 			account.AggregateID = uuid
-			account.Owner = "mishudark"
+			account.Owner = "fabriciopf"
 
 			commandBus.HandleCommand(account)
 			glog.Infof("account %s - account created", uuid)

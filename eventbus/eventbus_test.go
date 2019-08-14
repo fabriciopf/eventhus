@@ -4,7 +4,7 @@ import (
 	"errors"
 	"testing"
 
-	"github.com/mishudark/eventhus"
+	"github.com/fabriciopf/eventhus"
 )
 
 type producerStubEntry struct {

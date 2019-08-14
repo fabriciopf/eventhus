@@ -1,13 +1,13 @@
 package config
 
 import (
-	"github.com/mishudark/eventhus"
-	"github.com/mishudark/eventhus/commandbus/async"
-	"github.com/mishudark/eventhus/eventbus/mosquitto"
-	"github.com/mishudark/eventhus/eventbus/nats"
-	"github.com/mishudark/eventhus/eventbus/rabbitmq"
-	"github.com/mishudark/eventhus/eventstore/badger"
-	"github.com/mishudark/eventhus/eventstore/mongo"
+	"github.com/fabriciopf/eventhus"
+	"github.com/fabriciopf/eventhus/commandbus/async"
+	"github.com/fabriciopf/eventhus/eventbus/mosquitto"
+	"github.com/fabriciopf/eventhus/eventbus/nats"
+	"github.com/fabriciopf/eventhus/eventbus/rabbitmq"
+	"github.com/fabriciopf/eventhus/eventstore/badger"
+	"github.com/fabriciopf/eventhus/eventstore/mongo"
 )
 
 // EventBus returns an eventhus.EventBus impl

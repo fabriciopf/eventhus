@@ -1,10 +1,10 @@
 package main
 
 import (
-	"github.com/mishudark/eventhus"
-	"github.com/mishudark/eventhus/commandhandler/basic"
-	"github.com/mishudark/eventhus/config"
-	"github.com/mishudark/eventhus/examples/bank"
+	"github.com/fabriciopf/eventhus"
+	"github.com/fabriciopf/eventhus/commandhandler/basic"
+	"github.com/fabriciopf/eventhus/config"
+	"github.com/fabriciopf/eventhus/examples/bank"
 )
 
 func getConfig() (eventhus.CommandBus, error) {

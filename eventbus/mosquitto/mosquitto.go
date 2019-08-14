@@ -2,7 +2,7 @@ package mosquitto
 
 import (
 	"encoding/json"
-	"github.com/mishudark/eventhus"
+	"github.com/fabriciopf/eventhus"
 	"fmt"
 	"log"
 	"os"

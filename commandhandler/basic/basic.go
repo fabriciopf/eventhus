@@ -4,7 +4,7 @@ import (
 	"errors"
 	"reflect"
 
-	"github.com/mishudark/eventhus"
+	"github.com/fabriciopf/eventhus"
 )
 
 // ErrInvalidID missing initial event
