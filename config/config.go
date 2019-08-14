@@ -6,7 +6,6 @@ import (
 	"github.com/fabriciopf/eventhus/eventbus/mosquitto"
 	"github.com/fabriciopf/eventhus/eventbus/nats"
 	"github.com/fabriciopf/eventhus/eventbus/rabbitmq"
-	"github.com/fabriciopf/eventhus/eventstore/badger"
 	"github.com/fabriciopf/eventhus/eventstore/mongo"
 )
 
@@ -81,13 +80,6 @@ func Mosquitto(method string, host string, port int, clientID string) EventBus {
 func Mongo(host string, port int, db string) EventStore {
 	return func() (eventhus.EventStore, error) {
 		return mongo.NewClient(host, port, db)
-	}
-}
-
-// Badger generates a BadgerDB implementation of EventStore
-func Badger(dbDir string) EventStore {
-	return func() (eventhus.EventStore, error) {
-		return badger.NewClient(dbDir)
 	}
 }
 
