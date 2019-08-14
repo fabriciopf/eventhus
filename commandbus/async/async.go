@@ -1,6 +1,6 @@
 package async
 
-import "github.com/mishudark/eventhus"
+import "github.com/fabriciopf/eventhus"
 
 var workerPool = make(chan chan eventhus.Command)
 
