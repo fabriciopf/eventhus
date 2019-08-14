@@ -2,7 +2,6 @@ module github.com/fabriciopf/eventhus
 
 require (
 	github.com/AndreasBriese/bbloom v0.0.0-20180913140656-343706a395b7 // indirect
-	github.com/dgraph-io/badger v1.5.4
 	github.com/dgryski/go-farm v0.0.0-20190104051053-3adb47b1fb0f // indirect
 	github.com/eclipse/paho.mqtt.golang v1.1.1
 	github.com/golang/glog v0.0.0-20160126235308-23def4e6c14b
