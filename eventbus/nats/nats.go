@@ -2,9 +2,9 @@ package nats
 
 import (
 	"encoding/json"
-	"github.com/fabriciopf/eventhus"
 	"strings"
 
+	"github.com/fabriciopf/eventhus"
 	nats "github.com/nats-io/go-nats"
 )
 
@@ -42,10 +42,35 @@ func (c *Client) Publish(event eventhus.Event, bucket, subset string) error {
 		return err
 	}
 
-	subj := bucket + "." + subset
+	subj := bucket + "." + subset + "." + event.Type + "." + event.AggregateID
 	nc.Publish(subj, blob)
 	nc.Flush()
 
 	err = nc.LastError()
 	return err
+}
+
+func (c *Client) Subscribe(pattern string, cb func(event eventhus.Event)) error {
+	nc, err := c.Options.Connect()
+	if err != nil {
+		return err
+	}
+
+	defer nc.Close()
+
+	nc.Subscribe(pattern, func(msg *nats.Msg) {
+		var event eventhus.Event
+		tokens := strings.Split(msg.Subject, ".")
+		event.Type = tokens[2]
+		event.AggregateType = tokens[1]
+		event.AggregateID = tokens[3]
+		event.Data = msg.Data
+		msg.Sub.Unsubscribe()
+		go cb(event)
+	})
+
+	nc.Flush()
+	err = nc.LastError()
+	return err
+
 }
